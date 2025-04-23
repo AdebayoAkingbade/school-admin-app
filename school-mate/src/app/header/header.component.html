@@ -1,0 +1,125 @@
+<header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+            <!-- Logo -->
+            <a href="#" class="text-xl font-semibold text-gray-800 mr-10">MACJENS</a>
+
+            <!-- Search -->
+            <div class="relative w-full sm:w-[480px]">
+                <div
+                        class="flex items-center bg-white border border-gray-300 shadow-sm rounded-full overflow-hidden focus-within:ring-2 focus-within:ring-blue-500">
+                    <div class="pl-3 pr-1 text-gray-400">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <input type="search" placeholder="Search projects and resources"
+                           class="w-full px-3 py-2 text-sm text-gray-800 bg-white focus:outline-none"/>
+                </div>
+            </div>
+
+            <!-- Right side actions -->
+            <div class="flex items-center gap-4 ml-auto">
+                <!-- Language Dropdown -->
+                <div class="relative" id="langDropdownWrapper">
+                    <button id="langToggleBtn"
+                            class="inline-flex items-center px-3 py-1.5 border border-gray-300 rounded-md bg-white text-sm font-medium text-gray-800 hover:bg-gray-100 transition">
+                        <span id="selectedLang">Epic</span>
+                        <svg class="ml-1 h-4 w-4 text-gray-600" xmlns="http://www.w3.org/2000/svg"
+                             fill="currentColor"
+                             viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+
+                </div>
+
+
+                <!-- User Profile -->
+                <div class="relative" id="userDropdownWrapper">
+                    <button id="userToggleBtn"
+                            class="flex items-center gap-2 bg-gray-100 py-1 px-2 rounded-full shadow-sm hover:shadow-md transition">
+                        <div
+                                class="w-8 h-8 bg-[#1C4B6D] text-white text-sm font-bold flex items-center justify-center rounded-full">
+                            AA
+                        </div>
+                        <span class="text-xl leading-none">🇳🇬</span>
+                        <svg class="w-4 h-4 text-[#1C4B6D]" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                             viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"/>
+                        </svg>
+                    </button>
+
+                    <div id="userDropdown"
+                         class="absolute top-full right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 z-10 transform transition-all duration-200 ease-out origin-top-right opacity-0 scale-95 pointer-events-none">
+
+                        <div class="py-1">
+                            <div
+                                 class="flex items-center px-4 py-2 text-sm text-gray-700">
+                                <i class="fas fa-user-shield mr-2 text-gray-400"></i>
+                                <button class="font-medium hover:text-gray-900 hover:cursor-pointer focus:outline-none">
+                                    My Roles
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="py-1">
+                            <div data-dialog-target="dialog-sm"
+                                 class="flex items-center px-4 py-2 text-sm text-gray-700  hover:bg-gray-100">
+                                <i class="fas fa-sign-out-alt mr-2 text-red-600"></i>
+                                <button class="font-medium hover:text-gray-900 hover:cursor-pointer focus:outline-none">
+                                    Sign out
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<!-- Modal User Icons - Log Out -->
+<div data-dialog-backdrop="dialog-sm"
+     class="pointer-events-none fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 opacity-0 backdrop-blur-sm transition-opacity duration-300">
+    <div data-dialog="dialog-sm" class="relative m-3 p-5 w-80 rounded-lg bg-white shadow-sm">
+        <div class="flex flex-col items-center text-center">
+
+            <div class="bg-white rounded-full p-4 mb-4 flex items-center justify-center">
+                <i class="fas fa-question-circle text-indigo-900 text-4xl"></i>
+            </div>
+
+            <div class="flex shrink-0 items-center pb-2 text-2xl font-bold text-black">
+                Sign out
+            </div>
+
+            <div class="pb-5 leading-tight text-black text-base">
+                Are you sure you want out?
+            </div>
+        </div>
+
+        <div class="flex shrink-0 flex-row items-center justify-between gap-3">
+            <button data-dialog-close="true"
+                    class="flex-1 rounded-md bg-gray-100 py-2.5 px-4 border border-transparent text-center text-sm font-medium text-blue-800 transition-all"
+                    type="button">
+                No, go back
+            </button>
+            <button data-dialog-close="true"
+                    class="flex-1 rounded-md bg-red-700 py-2.5 px-4 border border-transparent text-center text-sm font-medium text-white transition-all"
+                    type="button">
+                Yes, sign out
+            </button>
+        </div>
+    </div>
+</div>

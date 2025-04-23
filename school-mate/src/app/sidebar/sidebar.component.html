@@ -1,0 +1,202 @@
+<!-- <div class="w-64 h-screen bg-[#483078] text-white p-4">
+
+  <div class="text-xs font-semibold text-gray-300 tracking-widest mb-3 mt-2">MENU</div>
+
+
+  <div class="mt-4">
+    <div
+      (click)="toggleDropdown('dashboard')"
+      class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
+    >
+      <span>Dashboard</span>
+      <svg class="w-4 h-4 transform transition-transform duration-200"
+        [ngClass]="{ 'rotate-180': dropdowns['dashboard'] }"
+        fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <ul *ngIf="dropdowns['dashboard']" class="ml-4 mt-1 space-y-1 text-sm">
+      <li [routerLink]="'/bursary'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Bursary</li>
+      <li [routerLink]="'/teachers'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Teachers</li>
+      <li [routerLink]="'/principal'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Principal</li>
+    </ul>
+  </div>
+
+  
+  <div class="mt-2">
+    <div
+      (click)="toggleDropdown('announcements')"
+      class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
+    >
+      <span>Announcements</span>
+      <svg class="w-4 h-4 transform transition-transform duration-200"
+        [ngClass]="{ 'rotate-180': dropdowns['announcements'] }"
+        fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <ul *ngIf="dropdowns['announcements']" class="ml-4 mt-1 space-y-1 text-sm">
+      <li [routerLink]="'/announcement-bursary'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Bursary</li>
+      <li [routerLink]="'/announcement-teachers'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Teachers</li>
+      <li [routerLink]="'/announcement-principal'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Principal</li>
+    </ul>
+  </div>
+
+  
+  <div class="my-4 border-t border-gray-500"></div>
+
+  
+  <div class="text-xs font-semibold text-gray-300 tracking-widest mb-2">ADMINISTRATION</div>
+
+  
+  <div>
+    <div
+      (click)="toggleDropdown('admin')"
+      class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
+    >
+      <span>Admin</span>
+      <svg class="w-4 h-4 transform transition-transform duration-200"
+        [ngClass]="{ 'rotate-180': dropdowns['admin'] }"
+        fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <ul *ngIf="dropdowns['admin']" class="ml-4 mt-1 space-y-1 text-sm">
+      <li [routerLink]="'/admin-bursary'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Bursary</li>
+      <li [routerLink]="'/admin-teachers'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Teachers</li>
+      <li [routerLink]="'/admin-principal'" routerLinkActive="bg-[#130A26] px-3 py-1 rounded">Principal</li>
+    </ul>
+  </div>
+</div> -->
+
+
+<div class="w-64 h-screen bg-[#483078] text-white p-4">
+  <!-- MENU LABEL -->
+  <div class="text-xs font-semibold text-gray-300 tracking-widest mb-3 mt-2">MENU</div>
+
+  <!-- DASHBOARD DROPDOWN -->
+  <div class="mt-4">
+    <div
+      (click)="toggleDropdown('dashboard')"
+      class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
+    >
+      <span>Dashboard</span>
+      <svg class="w-4 h-4 transform transition-transform duration-200"
+        [ngClass]="{ 'rotate-180': dropdowns['dashboard'] }"
+        fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <ul *ngIf="dropdowns['dashboard']" class="ml-4 mt-1 space-y-1 text-sm">
+      <li>
+        <a [routerLink]="'/dashboard'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Admin dshboard
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/teachers'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Teachers
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/principal'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Principal
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ANNOUNCEMENTS DROPDOWN -->
+  <div class="mt-2">
+    <div
+      (click)="toggleDropdown('announcements')"
+      class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
+    >
+      <span>Announcements</span>
+      <svg class="w-4 h-4 transform transition-transform duration-200"
+        [ngClass]="{ 'rotate-180': dropdowns['announcements'] }"
+        fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <ul *ngIf="dropdowns['announcements']" class="ml-4 mt-1 space-y-1 text-sm">
+      <li>
+        <a [routerLink]="'/announcement-bursary'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Bursary
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/announcement-teachers'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Teachers
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/announcement-principal'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Principal
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SPACER -->
+  <div class="my-4 border-t border-gray-500"></div>
+
+  <!-- ADMINISTRATION LABEL -->
+  <div class="text-xs font-semibold text-gray-300 tracking-widest mb-2">ADMINISTRATION</div>
+
+  <!-- ADMIN DROPDOWN -->
+  <div>
+    <div
+      (click)="toggleDropdown('admin')"
+      class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
+    >
+      <span>Admin</span>
+      <svg class="w-4 h-4 transform transition-transform duration-200"
+        [ngClass]="{ 'rotate-180': dropdowns['admin'] }"
+        fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </div>
+    <ul *ngIf="dropdowns['admin']" class="ml-4 mt-1 space-y-1 text-sm">
+      <li>
+        <a [routerLink]="'/admin-bursary'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Bursary
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/admin-teachers'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Teachers
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/admin-principal'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-1 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Principal
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
