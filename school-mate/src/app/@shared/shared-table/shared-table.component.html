@@ -1,0 +1,132 @@
+<p-table
+  [value]="tableData | filter : searchedKeyword"
+  [paginator]="true"
+  [rows]="10"
+  [rowsPerPageOptions]="[5, 10, 20, 50]"
+  [responsiveLayout]="'scroll'"
+  [scrollable]="true"
+  [autoLayout]="true"
+  scrollHeight="600px"
+  [resizableColumns]="true"
+  [showCurrentPageReport]="true"
+  [styleClass]="'p-datatable-sm p-datatable-striped'"
+  [paginatorDropdownAppendTo]="'body'"
+>
+  <ng-template pTemplate="header">
+    <tr class="bg-[#4830781A] sticky top-0 z-50 w-full shadow-md rounded-[8px] mb-3">
+      <th
+        *ngFor="let col of columns"
+        pSortableColumn="{{ col.field }}"
+        class="px-4 py-3 text-left font-semibold text-gray-700"
+      >
+        {{ col.headerKey }}
+        <span class="ml-1 text-xs">
+          <i class="pi pi-caret-up text-xs"></i>
+          <i class="pi pi-caret-down text-xs"></i>
+        </span>
+      </th>
+      <th class="px-4 py-2 text-left font-semibold text-gray-700">Action</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+    <tr class="hover:bg-gray-100">
+      <td *ngFor="let col of columns" class="px-4 py-3">
+        {{ col.field === 'index' ? i + 1 : rowData[col.field] }}
+      </td>
+      <td class="px-4 py-3">
+        <button class="bg-[#483078] text-white px-4 py-2 rounded-full hover:bg-[#341e5a]">
+          Select
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+    <tr class="hover:bg-gray-100 mt-3">
+      <td *ngFor="let col of columns" class="px-4 py-3">{{ col.field === 'index' ? i + 1 : rowData[col.field] }}</td>
+      <td style="width: 200px">
+        <div class="flex gap-2">
+          <button
+            *ngIf="showApproveBtn"
+            class="bg-[#483078] text-white px-4 py-1 rounded-full hover:bg-[#341e5a]"
+            (click)="showApproveModal(rowData)"
+          >
+            Approve
+          </button>
+
+          <button
+            *ngIf="showActionBtn"
+            class="bg-[#483078] text-white px-4 py-1 rounded-full hover:bg-[#341e5a]"
+            (click)="showActionModal(rowData)"
+          >
+            Select
+          </button>
+
+          <button
+            *ngIf="showModifyBtn"
+            class="bg-[#483078] text-white px-4 py-1 rounded-full hover:bg-[#341e5a]"
+            (click)="showModifyModal(rowData)"
+          >
+            Modify
+          </button>
+
+          <button
+            *ngIf="showRejectBtn"
+            class="text-red-600 border border-red-300 rounded px-3 py-1 text-sm hover:bg-red-50 transition"
+            (click)="showRejectModal(rowData)"
+          >
+            Reject
+          </button>
+
+          <button
+            *ngIf="showDeleteBtn"
+            class="text-red-600 border border-red-300 rounded px-3 py-1 text-sm hover:bg-red-50 transition"
+            (click)="showDeleteModal(rowData)"
+          >
+            Delete
+          </button>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="paginatorleft">
+    <span>Total: {{ tableData.length }}</span>
+  </ng-template>
+</p-table>
+
+<!-- <p-table 
+  [value]="tableData"
+  [paginator]="true"
+  [rows]="10"
+  class="p-datatable-sm"
+  [responsiveLayout]="'scroll'">
+  
+  <ng-template pTemplate="header">
+    <tr class="bg-gray-200">
+      <th *ngFor="let col of columns" class="px-4 py-2 text-left font-semibold text-gray-700">
+        {{ col.headerKey }}
+      </th>
+      <th class="px-4 py-2 text-left font-semibold text-gray-700">Action</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-rowData let-i="rowIndex">
+    <tr class="hover:bg-gray-100">
+      <td *ngFor="let col of columns" class="px-4 py-3">
+        {{ col.field === 'index' ? i + 1 : rowData[col.field] }}
+      </td>
+      <td class="px-4 py-3">
+        <button class="bg-[#483078] text-white px-4 py-2 rounded-full hover:bg-[#341e5a]">
+          Select
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="paginatorleft">
+    <span class="text-sm text-gray-500">Showing {{ tableData.length ? 1 : 0 }} to {{ tableData.length }} entries</span>
+  </ng-template>
+
+</p-table> -->

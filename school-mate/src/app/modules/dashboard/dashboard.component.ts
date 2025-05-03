@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { ChartConfiguration,  ChartType, Chart, registerables } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { addDays, format, getDaysInMonth, startOfMonth, isSameMonth, isToday, addMonths, subMonths } from 'date-fns';
@@ -43,50 +43,105 @@ export class DashboardComponent {
     }
   ];
 
-  // Chart data
-  public lineChartData: ChartConfiguration<'line'>['data'] = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    datasets: [
-      {
-        label: 'Total Students',
+
+  chartData = {
+    revenue: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'Revenue',
+        data: [5000, 8000, 6000, 9000, 7000, 10000],
+        borderColor: '#4f46e5',
+        backgroundColor: 'rgba(79,70,229,0.1)',
+        fill: true,
+        tension: 0.4
+      }]
+    },
+    teachers: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'Teachers',
+        data: [10, 12, 14, 15, 16, 17],
+        borderColor: '#4f46e5',
+        backgroundColor: 'rgba(79,70,229,0.1)',
+        fill: true,
+        tension: 0.4
+      }]
+    },
+    students: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+      datasets: [{
+        label: 'Students',
         data: [200, 400, 600, 800, 530, 700],
         borderColor: '#4f46e5',
         backgroundColor: 'rgba(79,70,229,0.1)',
         fill: true,
-        tension: 0.4,
-      }
-    ]
-  };
-
-  public lineChartOptions: ChartConfiguration<'line'>['options'] = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        display: false
-      }
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: {
-          stepSize: 200
-        },
-        grid: {
-          color: 'rgba(0, 0, 0, 0.05)'
-        }
-      },
-      x: {
-        grid: {
-          display: false
-        }
-      }
+        tension: 0.4
+      }]
     }
   };
 
-  public lineChartType = 'line' as const;
+  activeTab: 'revenue' | 'teachers' | 'students' = 'revenue';
+  lineChartData = this.chartData.revenue;
+  lineChartOptions: ChartConfiguration<'line'>['options'] = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: 'rgba(0, 0, 0, 0.05)' } },
+      x: { grid: { display: false } }
+    }
+  };
+  lineChartType = 'line' as const;
 
-  // Calendar data
+
+  switchTab(tab: 'revenue' | 'teachers' | 'students') {
+    this.activeTab = tab;
+    this.lineChartData = this.chartData[tab];
+  }
+
+
+
+  
+  // public lineChartData: ChartConfiguration<'line'>['data'] = {
+  //   labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+  //   datasets: [
+  //     {
+  //       label: 'Total Students',
+  //       data: [200, 400, 600, 800, 530, 700],
+  //       borderColor: '#4f46e5',
+  //       backgroundColor: 'rgba(79,70,229,0.1)',
+  //       fill: true,
+  //       tension: 0.4,
+  //     }
+  //   ]
+  // };
+
+  // public lineChartOptions: ChartConfiguration<'line'>['options'] = {
+  //   responsive: true,
+  //   maintainAspectRatio: false,
+  //   plugins: {
+  //     legend: {
+  //       display: false
+  //     }
+  //   },
+  //   scales: {
+  //     y: {
+  //       beginAtZero: true,
+  //       ticks: {
+  //         stepSize: 200
+  //       },
+  //       grid: {
+  //         color: 'rgba(0, 0, 0, 0.05)'
+  //       }
+  //     },
+  //     x: {
+  //       grid: {
+  //         display: false
+  //       }
+  //     }
+  //   }
+  // };
+
   currentDate = new Date();
   weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
   calendarDays: CalendarDay[] = [];
@@ -102,23 +157,20 @@ export class DashboardComponent {
   generateCalendar(): void {
     const startDate = startOfMonth(this.currentDate);
     const daysInMonth = getDaysInMonth(this.currentDate);
-    const startDay = (startDate.getDay() + 6) % 7; // Adjust to make Monday first
+    const startDay = (startDate.getDay() + 6) % 7; 
     
     this.calendarDays = [];
     
-    // Add days from previous month
     for (let i = 0; i < startDay; i++) {
       const date = addDays(startDate, - (startDay - i));
       this.addCalendarDay(date, false);
     }
     
-    // Add current month days
     for (let i = 0; i < daysInMonth; i++) {
       const date = addDays(startDate, i);
       this.addCalendarDay(date, true);
     }
     
-    // Add days from next month to complete 6 weeks
     const totalDays = startDay + daysInMonth;
     const remainingDays = totalDays <= 35 ? 35 - totalDays : 42 - totalDays;
     
@@ -148,7 +200,6 @@ export class DashboardComponent {
     this.generateCalendar();
   }
 
-  // Announcements
   announcements = [
     {
       date: '01-05-2022',

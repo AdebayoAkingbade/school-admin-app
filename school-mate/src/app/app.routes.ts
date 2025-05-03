@@ -18,6 +18,12 @@ export const routes: Routes = [
         loadComponent: async() =>
             import('./modules/dashboard/dashboard.component').then((c) => c.DashboardComponent),
     },
+    {
+      path: 'admin-query',
+      data: { title: 'Admin Query' },
+      loadComponent: async() =>
+          import('./modules/admin-query/admin-query.component').then((c) => c.AdminQueryComponent),
+  },
     ]
   },
 ];
