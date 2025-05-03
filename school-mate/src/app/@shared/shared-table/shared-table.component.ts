@@ -23,6 +23,7 @@ export class SharedTableComponent {
   @Input() showApproveBtn: boolean = false;
   @Input() columns: { field: string; headerKey: string }[] = [];
   @Input() searchedKeyword: string = '';
+  @Input() tableTitle: string = 'Query List'
   @Output() actionRow = new EventEmitter<any>();
   @Output() approveRow = new EventEmitter<any>();
   @Output() modifyRow = new EventEmitter<any>();

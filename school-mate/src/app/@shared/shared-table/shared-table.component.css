@@ -1,4 +1,4 @@
-:host ::ng-deep .p-paginator {
+/* :host ::ng-deep .p-paginator {
     background-color: transparent;
     border: none;
   }
@@ -9,5 +9,32 @@
   }
   :host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
     border-radius: 0.5rem;
+  }
+
+   */
+
+   ::ng-deep .p-paginator {
+    @apply flex justify-center items-center p-4 bg-white rounded-b-lg border-t border-gray-200;
+  }
+  
+  ::ng-deep .p-paginator .p-paginator-pages {
+    @apply flex items-center gap-2;
+  }
+  
+  ::ng-deep .p-paginator .p-paginator-page {
+    @apply w-8 h-8 flex justify-center items-center rounded-full text-white bg-[#130A26] hover:bg-[#341e5a] transition;
+  }
+  
+  ::ng-deep .p-paginator .p-paginator-page.p-highlight {
+    @apply bg-[#130A26] text-white;
+  }
+  
+  ::ng-deep .p-paginator .p-paginator-prev,
+  ::ng-deep .p-paginator .p-paginator-next {
+    @apply text-[#130A26] hover:text-white hover:bg-[#130A26] rounded-full p-2 transition;
+  }
+
+  ::ng-deep .p-dropdown-panel {
+    @apply z-40;
   }
   

@@ -1,3 +1,7 @@
+<div class="bg-[#130A26] text-white font-semibold px-6 py-3 rounded-full text-lg mb-6">
+  {{ tableTitle || 'Query List' }}
+</div>
+
 <p-table
   [value]="tableData | filter : searchedKeyword"
   [paginator]="true"
@@ -8,12 +12,13 @@
   [autoLayout]="true"
   scrollHeight="600px"
   [resizableColumns]="true"
-  [showCurrentPageReport]="true"
+  [showCurrentPageReport]="false"
   [styleClass]="'p-datatable-sm p-datatable-striped'"
-  [paginatorDropdownAppendTo]="'body'"
+  [paginatorDropdownAppendTo]="'self'"
+  class="rounded-b-lg overflow-hidden"
 >
   <ng-template pTemplate="header">
-    <tr class="bg-[#4830781A] sticky top-0 z-50 w-full shadow-md rounded-[8px] mb-3">
+    <tr class="bg-[#4830781A] top-0 z-50 w-full shadow-md rounded-full mb-6">
       <th
         *ngFor="let col of columns"
         pSortableColumn="{{ col.field }}"

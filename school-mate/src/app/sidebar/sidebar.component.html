@@ -106,10 +106,24 @@
         </a>
       </li>
       <li>
-        <a [routerLink]="'/principal'" routerLinkActive="bg-[#130A26]"
+        <a [routerLink]="'/visitors-book'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Principal
+          Visitors Book
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/complaints'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Complaints
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/certificate'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Certificate
         </a>
       </li>
     </ul>
@@ -162,7 +176,7 @@
       (click)="toggleDropdown('admin')"
       class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
     >
-      <span>Admin</span>
+      <span>User</span>
       <svg class="w-4 h-4 transform transition-transform duration-200"
         [ngClass]="{ 'rotate-180': dropdowns['admin'] }"
         fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
@@ -175,14 +189,14 @@
         <a [routerLink]="'/admin-bursary'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Bursary
+          Admin
         </a>
       </li>
       <li>
         <a [routerLink]="'/admin-teachers'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Teachers
+          Parents
         </a>
       </li>
       <li>
@@ -200,7 +214,7 @@
       (click)="toggleDropdown('academics')"
       class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
     >
-      <span>Academics</span>
+      <span>Wallet</span>
       <svg class="w-4 h-4 transform transition-transform duration-200"
         [ngClass]="{ 'rotate-180': dropdowns['admin'] }"
         fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
@@ -238,7 +252,7 @@
       (click)="toggleDropdown('materials')"
       class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
     >
-      <span>Study Materials</span>
+      <span>Dues</span>
       <svg class="w-4 h-4 transform transition-transform duration-200"
         [ngClass]="{ 'rotate-180': dropdowns['materials'] }"
         fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
@@ -251,21 +265,21 @@
         <a [routerLink]="'/materials-bursary'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Bursary
+          School Fee
         </a>
       </li>
       <li>
         <a [routerLink]="'/materials-teachers'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Teachers
+          Clothings
         </a>
       </li>
       <li>
         <a [routerLink]="'/materials-principal'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Principal
+          Trips and tours
         </a>
       </li>
     </ul>
@@ -275,7 +289,7 @@
       (click)="toggleDropdown('lesson-plan')"
       class="flex justify-between items-center cursor-pointer py-2 px-3 rounded hover:bg-[#130A26]"
     >
-      <span>Lesson Plan</span>
+      <span>Study Materials</span>
       <svg class="w-4 h-4 transform transition-transform duration-200"
         [ngClass]="{ 'rotate-180': dropdowns['lesson-plan'] }"
         fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"

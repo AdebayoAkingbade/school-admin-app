@@ -27,19 +27,19 @@ export class DashboardComponent {
       title: 'Students',
       value: '432',
       description: '+53 since the past 4 weeks',
-      iconPath: '../../../assets/svg/studentdash.svg'
+      iconPath: '../../../assets/images/studentDash.png'
     },
     {
       title: 'Teacher',
       value: '17',
       description: '',
-      iconPath: '../../../assets/svg/teacherdash.svg'
+      iconPath: '../../../assets/images/teacherDash.png'
     },
     {
       title: 'Non-teaching Staff',
       value: '7',
       description: '',
-      iconPath: '../../../assets/svg/nonstaffdash.svg'
+      iconPath: '../../../assets/images/nonstaffDash.png'
     }
   ];
 

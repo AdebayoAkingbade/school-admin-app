@@ -1,0 +1,154 @@
+<h3 class="text-xl font-bold text-gray-800 mb-4">Complaints</h3>
+<div
+  class="bg-white shadow rounded-xl p-6 overflow-hidden overflow-y-auto mb-3"
+>
+  <h3 class="text-xl text-gray-800 mb-4">Add Complaints</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+    
+    <div>
+      <label class="block text-gray-700 mb-1" for="dateFrom">Complaints By</label>
+      <input
+        id="complaintsBy"
+        type="text"
+        placeholder="Type here..."
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        [(ngModel)]="criteria.dateFrom"
+      />
+    </div>
+
+    <div>
+      <label class="block text-gray-700 mb-1" for="dateTo">Complaints Type</label>
+      <select
+        id="source"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        [(ngModel)]="criteria.source"
+      >
+        <option value="">Select Source</option>
+        <option value="Chem.">Teachers Brutality</option>
+        <option value="Physics">Student's game kit</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-gray-700 mb-1" for="dateTo">Complaint Source</label>
+      <select
+        id="source"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        [(ngModel)]="criteria.source"
+      >
+        <option value="">Select Source</option>
+        <option value="Chem.">Parent</option>
+        <option value="Physics">Student</option>
+        <option value="Biology">Teacher</option>
+      </select>
+    </div>
+
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+    
+    <div>
+      <label class="block text-gray-700 mb-1" for="dateFrom"
+        >Phone</label
+      >
+      <input
+        id="phone"
+        type="text"
+        placeholder="Type here..."
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        [(ngModel)]="criteria.dateFrom"
+      />
+    </div>
+
+    <div>
+      <label class="block text-gray-700 mb-1" for="dateTo">Date</label>
+      <input
+        id="date"
+        type="date"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        [(ngModel)]="criteria.dateTo"
+      />
+    </div>
+
+    <div>
+      <label class="block text-gray-700 mb-1" for="source">Assigned</label>
+      <input
+        id="assigned"
+        type="type"
+        placeholder="Type here..."
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        [(ngModel)]="criteria.dateTo"
+      />
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+    
+    <div>
+      <label class="block text-gray-700 mb-1" for="dateFrom">Action Token</label>
+      <input
+        id="actionToken"
+        type="text"
+        placeholder="Type here..."
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        [(ngModel)]="criteria.dateFrom"
+      />
+    </div>
+
+    <div>
+      <label class="block text-gray-700 mb-1" for="dateTo">Description</label>
+      <input
+        id="description"
+        type="text"
+        placeholder="Type here..."
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        [(ngModel)]="criteria.dateTo"
+      />
+    </div>
+
+    <div class="relative w-full">
+        <label class="block text-gray-700 mb-1" for="fileInput">File</label>
+      
+        <!-- Hidden File Input -->
+        <input
+          #fileInput
+          type="file"
+          class="absolute inset-0 w-full h-full opacity-0 z-10 cursor-pointer"
+          (change)="onFileSelected($event)"
+        />
+      
+        <!-- Styled Readonly Text Input -->
+        <input
+          type="text"
+          placeholder="Upload document"
+          class="w-full border border-gray-300 rounded-lg py-2 px-4 pr-20 bg-white pointer-events-none"
+          [value]="selectedFileName"
+          readonly
+        />
+      
+        <!-- Upload Button -->
+        <button
+          type="button"
+          class="absolute right-2 top-8 text-sm bg-[#403950] text-white px-3 py-1 rounded hover:bg-[#392d53] z-20"
+          (click)="fileInput.click()"
+        >
+          Upload
+        </button>
+      </div>
+      
+
+    <div class="flex items-end">
+        <button
+          class="w-24 bg-[#483078] text-white font-medium text-sm px-4 py-2 rounded hover:bg-[#331b64] transition"
+        >
+          Save
+        </button>
+      </div>
+  </div>
+</div>
+<div class="bg-white shadow rounded-xl p-6 overflow-hidden overflow-y-auto">
+  <app-shared-table
+    [tableData]="adminQuery"
+    [columns]="tableColumns"
+    [showActionBtn]="showActionBtn"
+    [tableTitle]="'Complaint List'"
+  ></app-shared-table>
+</div>
