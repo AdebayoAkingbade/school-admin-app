@@ -1,0 +1,167 @@
+<form [formGroup]="form" class="space-y-6">
+    <h1 class="text-lg font-bold mb-4">Student Admission</h1>
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg mb-4">Academic Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <select formControlName="academicYear" class="border rounded px-3 py-2">
+          <option value="">Academic Year</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+        </select>
+        <input
+          type="text"
+          formControlName="section"
+          placeholder="Section"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="class"
+          placeholder="Class"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="date"
+          formControlName="admissionDate"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="admissionNumber"
+          placeholder="Admission Number"
+          class="border rounded px-3 py-2"
+        />
+      </div>
+      <button
+      [disabled]="!form.get('academicInfo')?.valid"
+        (click)="saveSection('academicInfo')"
+        class="mt-4 bg-[#483078] text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  
+    <!-- Personal Information -->
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg mb-4">Personal Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <input
+          type="text"
+          formControlName="firstName"
+          placeholder="First Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="lastName"
+          placeholder="Last Name"
+          class="border rounded px-3 py-2"
+        />
+        <select formControlName="gender" class="border rounded px-3 py-2">
+          <option value="">Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <input
+          type="date"
+          formControlName="dob"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="religion"
+          placeholder="Religion"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="file"
+          (change)="onFileSelect($event)"
+          class="border rounded px-3 py-2"
+        />
+      </div>
+      <button
+      [disabled]="!form.get('personalInfo')?.valid"
+  
+        (click)="saveSection('personalInfo')"
+        class="mt-4 bg-[#483078] text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  
+    <!-- Contact Information -->
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg mb-4">Contact Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="Email Address"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="phone"
+          placeholder="Phone Number"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="currentAddress"
+          placeholder="Current Address"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="permanentAddress"
+          placeholder="Permanent Address"
+          class="border rounded px-3 py-2"
+        />
+      </div>
+      <button
+        [disabled]="!form.get('contactInfo')?.valid"
+        (click)="saveSection('contactInfo')"
+        class="mt-4 bg-[#483078] text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  
+    <!-- Medical Report -->
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg mb-4">Medical Report</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <select formControlName="bloodGroup" class="border rounded px-3 py-2">
+          <option value="">Blood Group</option>
+          <option value="A+">A+</option>
+          <option value="O+">O+</option>
+          <option value="B+">B+</option>
+        </select>
+        <select formControlName="genotype" class="border rounded px-3 py-2">
+          <option value="">Genotype</option>
+          <option value="AA">AA</option>
+          <option value="AS">AS</option>
+        </select>
+        <input
+          type="text"
+          formControlName="height"
+          placeholder="Height"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="weight"
+          placeholder="Weight"
+          class="border rounded px-3 py-2"
+        />
+      </div>
+      <button
+        [disabled]="!form.get('medicalReport')?.valid || !allSectionsSaved()"
+        (click)="submitMedicalReport()"
+        class="mt-4 bg-[#483078] text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+  

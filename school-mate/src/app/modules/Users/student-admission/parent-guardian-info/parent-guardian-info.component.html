@@ -1,0 +1,126 @@
+<form [formGroup]="form" class="space-y-6">
+    <h1 class="text-lg font-bold mb-4">Student Admission</h1>
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg mb-4">Parents Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <input
+          type="text"
+          formControlName="firstName"
+          placeholder="Father's First Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="lastName"
+          placeholder="Father's Last Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="admissionDate"
+          placeholder="Occupation"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="phoneNumber"
+          placeholder="Phone Number"
+          class="border rounded px-3 py-2"
+        />
+        <input
+        type="text"
+        formControlName="address"
+        placeholder="Permanent Address"
+        class="border rounded px-3 py-2"
+      />
+      </div>
+      
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+        <input
+          type="text"
+          formControlName="firstName"
+          placeholder="Mother's First Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="lastName"
+          placeholder="Mother's Last Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="admissionDate"
+          placeholder="Occupation"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="phoneNumber"
+          placeholder="Phone Number"
+          class="border rounded px-3 py-2"
+        />
+        <input
+        type="text"
+        formControlName="address"
+        placeholder="Permanent Address"
+        class="border rounded px-3 py-2"
+      />
+      </div>
+
+      <button
+      [disabled]="!form.get('parentInfo')?.valid"
+        (click)="saveSection('parentInfo')"
+        class="mt-4 bg-[#483078] text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  
+    <!-- Personal Information -->
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg mb-4">Guardian Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <input
+          type="text"
+          formControlName="firstName"
+          placeholder="Guardian's First Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="lastName"
+          placeholder="Guardian's Last Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="admissionDate"
+          placeholder="Occupation"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="phoneNumber"
+          placeholder="Phone Number"
+          class="border rounded px-3 py-2"
+        />
+        <input
+        type="text"
+        formControlName="address"
+        placeholder="Permanent Address"
+        class="border rounded px-3 py-2"
+      />
+      </div>
+      <button
+      [disabled]="!form.get('guardianInfo')?.valid"
+  
+        (click)="saveSection('guardianInfo')"
+        class="mt-4 bg-[#483078] text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+  

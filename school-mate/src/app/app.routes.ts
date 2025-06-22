@@ -52,6 +52,14 @@ export const routes: Routes = [
             (c) => c.CertificateComponent
           ),
       },
+      {
+        path: 'user-student-admission',
+        data: { title: 'Certificate' },
+        loadComponent: async () =>
+          import('./modules/Users/student-admission/student-admission.component').then(
+            (c) => c.StudentAdmissionComponent
+          ),
+      },
     ],
   },
 ];

@@ -186,24 +186,31 @@
     </div>
     <ul *ngIf="dropdowns['admin']" class="ml-4 mt-1 space-y-1 text-sm">
       <li>
-        <a [routerLink]="'/admin-bursary'" routerLinkActive="bg-[#130A26]"
+        <a [routerLink]="'/user-student-admission'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Admin
+          Student Admission
         </a>
       </li>
       <li>
-        <a [routerLink]="'/admin-teachers'" routerLinkActive="bg-[#130A26]"
+        <a [routerLink]="'/user-manage-student'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Parents
+          Manage Student
         </a>
       </li>
       <li>
-        <a [routerLink]="'/admin-principal'" routerLinkActive="bg-[#130A26]"
+        <a [routerLink]="'/user-class'" routerLinkActive="bg-[#130A26]"
            [routerLinkActiveOptions]="{ exact: true }"
            class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
-          Principal
+          Class
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/user-wallet-transaction'" routerLinkActive="bg-[#130A26]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="block px-3 py-2 rounded hover:bg-[#130A26] transition-colors duration-200">
+          Wallet Transaction
         </a>
       </li>
     </ul>

@@ -48,7 +48,7 @@ export class CertificateComponent {
       {
         index: 1,
         name: 'Akindele Maurice',
-        documents: 'Wassce',
+        document: 'Wassce',
         // source: 'PTA',
         // phone: '080123456789',
         date: '21 Feb, 2003',
@@ -56,7 +56,7 @@ export class CertificateComponent {
       {
         index: 2,
         name: 'Akindele Maurice',
-        documents: 'Wassce',
+        document: 'Wassce',
         // source: 'PTA',
         // phone: '080123456789',
         date: '21 Feb, 2003',
@@ -64,7 +64,7 @@ export class CertificateComponent {
       {
         index: 3,
         name: 'Akindele Maurice',
-        documents: 'Wassce',
+        document: 'Wassce',
         // source: 'PTA',
         // phone: '080123456789',
         date: '21 Feb, 2003',
@@ -72,7 +72,7 @@ export class CertificateComponent {
       {
         index: 4,
         name: 'Akindele Maurice',
-        documents: 'Wassce',
+        document: 'Wassce',
         // source: 'PTA',
         // phone: '080123456789',
         date: '21 Feb, 2003',
@@ -80,7 +80,7 @@ export class CertificateComponent {
       {
         index: 5,
         name: 'Akindele Maurice',
-        documents: 'Wassce',
+        document: 'Wassce',
         // source: 'PTA',
         // phone: '080123456789',
         date: '21 Feb, 2003',

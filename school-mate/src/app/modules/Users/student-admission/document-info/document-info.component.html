@@ -1,0 +1,101 @@
+<form [formGroup]="form" class="space-y-6">
+    <h1 class="text-lg font-bold mb-4">Student Admission</h1>
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg mb-4">Documents Info</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <select formControlName="academicYear" class="border rounded px-3 py-2">
+            <option value="">Document Type</option>
+            <option value="2024">Primary School Cert</option>
+            <option value="2025">Birth Cert</option>
+          </select>
+        <input
+          type="text"
+          formControlName="documentId"
+          placeholder="Document Id"
+          class="border rounded px-3 py-2"
+        />
+        <div class="relative w-full">
+        
+            <!-- Hidden File Input -->
+            <input
+              #fileInput
+              type="file"
+              class="absolute inset-0 w-full h-full opacity-0 z-10 cursor-pointer"
+              (change)="onFileSelected($event)"
+            />
+        
+            <!-- Styled Readonly Text Input -->
+            <input
+              type="text"
+              placeholder="Upload document"
+              class="w-full border border-gray-300 rounded-lg py-2 px-4 pr-20 bg-white pointer-events-none"
+              [value]="selectedFileName"
+              readonly
+            />
+        
+            <!-- Upload Button -->
+            <button
+              type="button"
+              class="absolute right-2 top-8 text-sm bg-[#403950] text-white px-3 py-1 rounded hover:bg-[#392d53] z-20"
+              (click)="fileInput.click()"
+            >
+              Upload
+            </button>
+          </div>
+      </div>
+
+      <button
+      [disabled]="!form.get('parentInfo')?.valid"
+        (click)="saveSection('parentInfo')"
+        class="mt-4 bg-[#483078] text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  
+    <!-- Personal Information -->
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg mb-4">Guardian Information</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <input
+          type="text"
+          formControlName="firstName"
+          placeholder="Guardian's First Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="lastName"
+          placeholder="Guardian's Last Name"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="admissionDate"
+          placeholder="Occupation"
+          class="border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          formControlName="phoneNumber"
+          placeholder="Phone Number"
+          class="border rounded px-3 py-2"
+        />
+        <input
+        type="text"
+        formControlName="address"
+        placeholder="Permanent Address"
+        class="border rounded px-3 py-2"
+      />
+      </div>
+      <button
+      [disabled]="!form.get('guardianInfo')?.valid"
+  
+        (click)="saveSection('guardianInfo')"
+        class="mt-4 bg-[#483078] text-white px-4 py-2 rounded"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+  

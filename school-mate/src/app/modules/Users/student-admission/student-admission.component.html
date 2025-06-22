@@ -1,0 +1,79 @@
+<div class="flex gap-2 mb-6 bg-[#4830781A] rounded-2xl">
+  <button
+    class="px-4 py-2 rounded-md"
+    [class.bg-[#130A26]]="currentTab === 'personal'"
+    [class.text-white]="currentTab === 'personal'"
+    (click)="setTab('personal')"
+  >
+    Personal Info
+  </button>
+
+  <button
+    class="px-4 py-2 rounded-md"
+    [class.bg-[#130A26]]="currentTab === 'guardians'"
+    [class.text-white]="currentTab === 'guardians'"
+    (click)="setTab('guardians')"
+  >
+    Parents & Guardians Info
+  </button>
+
+  <button
+    class="px-4 py-2 rounded-md"
+    [class.bg-[#130A26]]="currentTab === 'documents'"
+    [class.text-white]="currentTab === 'documents'"
+    (click)="setTab('documents')"
+  >
+    Documents Info
+  </button>
+
+  <button
+    class="px-4 py-2 rounded-md"
+    [class.bg-[#130A26]]="currentTab === 'prev-school'"
+    [class.text-white]="currentTab === 'prev-school'"
+    (click)="setTab('prev-school')"
+  >
+    Previous School Info
+  </button>
+
+  <button
+    class="px-4 py-2 rounded-md"
+    [class.bg-[#130A26]]="currentTab === 'other'"
+    [class.text-white]="currentTab === 'other'"
+    (click)="setTab('other')"
+  >
+    Other Info
+  </button>
+
+  <button
+    class="px-4 py-2 rounded-md"
+    [class.bg-[#130A26]]="currentTab === 'custom'"
+    [class.text-white]="currentTab === 'custom'"
+    (click)="setTab('custom')"
+  >
+    Custom Field
+  </button>
+</div>
+
+<div *ngIf="currentTab === 'personal'">
+  <app-personal-info></app-personal-info>
+</div>
+
+<div *ngIf="currentTab === 'guardians'">
+    <app-parent-guardian-info></app-parent-guardian-info>
+</div>
+
+<div *ngIf="currentTab === 'documents'">
+    <app-document-info></app-document-info>
+</div>
+
+<div *ngIf="currentTab === 'prev-school'">
+    <app-previous-school-info></app-previous-school-info>
+</div>
+
+<div *ngIf="currentTab === 'other'">
+    <app-other-info></app-other-info>
+</div>
+
+<div *ngIf="currentTab === 'custom'">
+    <app-custom-field></app-custom-field>
+</div>
