@@ -1,0 +1,94 @@
+<!-- <div class="bg-white rounded-xl p-6">
+    <h2 class="text-2xl font-bold mb-4">Applications Details</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div><strong>Name:</strong> {{ applicationData?.name }}</div>
+      <div><strong>Phone Number:</strong> {{ applicationData?.phone }}</div>
+      <div><strong>Application Number:</strong> {{ applicationData?.appNumber }}</div>
+      <div><strong>Application Date:</strong> {{ applicationData?.appDate }}</div>
+      <div><strong>Application Status:</strong> {{ applicationData?.appStatus }}</div>
+      <div><strong>Document:</strong> {{ applicationData?.document }}</div>
+    </div>
+  </div>
+   -->
+
+
+   <div class="px-6 pt-6">
+    
+    <h2 class="text-lg font-bold text-[#130A26] mb-4">Applications Details</h2>
+  
+    
+    <div class="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+      <input
+        type="text"
+        placeholder="Enter Input"
+        class="border border-gray-300 px-4 py-2 rounded-lg w-full md:w-1/3"
+      />
+      <select
+        class="border border-gray-300 px-4 py-2 rounded-lg w-full md:w-1/3"
+      >
+        <option>Application Status</option>
+      </select>
+      <button
+        class="bg-[#483078] text-white px-6 py-2 rounded-md self-start md:self-auto"
+      >
+        Update Status
+      </button>
+    </div>
+  
+    <div class="bg-[#F7F5FA] p-6 rounded-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+       
+        <div class="space-y-4 text-[#130A26] font-medium">
+          <div>
+            <span>Name:</span>
+            <span class="ml-2 font-normal">{{ applicationData?.name }}</span>
+          </div>
+          <div>
+            <span>Phone Number:</span>
+            <span class="ml-2 font-normal">{{ applicationData?.phone }}</span>
+          </div>
+          <div>
+            <span>Application Number:</span>
+            <span class="ml-2 font-normal">{{ applicationData?.appNumber }}</span>
+          </div>
+          <div>
+            <span>Application Date:</span>
+            <span class="ml-2 font-normal">{{ applicationData?.appDate }}</span>
+          </div>
+          <div>
+            <span>Profile ID:</span>
+            <span class="ml-2 font-normal">{{ applicationData?.profileId }}</span>
+          </div>
+          <div>
+            <span>Submitted Date:</span>
+            <span class="ml-2 font-normal">{{ applicationData?.submittedDate }}</span>
+          </div>
+          <div>
+            <span>Applied Class:</span>
+            <span class="ml-2 font-normal">{{ applicationData?.appliedClass }}</span>
+          </div>
+        </div>
+  
+        
+        <div>
+          <span class="text-[#130A26] font-medium block mb-2">
+            Submitted Document:
+          </span>
+          <div class="flex flex-col gap-3">
+            <span
+              *ngFor="let doc of applicationData?.documents"
+              [ngClass]="{
+                'bg-[#483078] text-white': doc === 'Birthday certificate' || doc === 'First School Leaving Cert.',
+                'bg-[#DAD2E3] text-[#130A26]': doc !== 'Birthday certificate' && doc !== 'First School Leaving Cert.'
+              }"
+              class="px-4 py-2 text-sm font-medium rounded-md w-max"
+            >
+              {{ doc }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

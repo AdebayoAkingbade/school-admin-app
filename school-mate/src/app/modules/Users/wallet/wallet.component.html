@@ -1,0 +1,49 @@
+<h3 class="text-xl font-bold text-gray-800 mb-4">Wallet Transaction</h3>
+<div
+  class="bg-white shadow rounded-xl p-6 overflow-hidden overflow-y-auto mb-3"
+>
+  <!-- <h3 class="text-xl text-gray-800 mb-4">Add Class</h3> -->
+  <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+    <div>
+      <input
+        id="source"
+        placeholder="Enter Name"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      />
+    </div>
+    <div>
+      <select
+        id="source"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+        <option value="">Grade Starts</option>
+      </select>
+    </div>
+
+    <div>
+      <select
+        id="source"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+        <option value="">Grade Ends</option>
+      </select>
+    </div>
+  </div> -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+    <div class="flex items-end">
+      <button
+        class="w-24 bg-[#483078] text-white font-medium text-sm px-4 py-2 rounded hover:bg-[#331b64] transition"
+      >
+        Sort
+      </button>
+    </div>
+  </div>
+</div>
+<div class="bg-white shadow rounded-xl p-6 overflow-hidden overflow-y-auto">
+  <app-shared-table
+    [tableData]="admission"
+    [columns]="tableColumns"
+    [showActionBtn]="showActionBtn"
+    [tableTitle]="'Wallet Transaction'"
+  ></app-shared-table>
+</div>

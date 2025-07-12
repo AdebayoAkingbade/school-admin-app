@@ -53,11 +53,51 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'admission-application',
+        data: { title: 'Admission Application' },
+        loadComponent: async () =>
+          import('./modules/admission-application/admission-application.component').then(
+            (c) => c.AdmissionApplicationComponent
+          ),
+      },
+      {
+        path: 'admission-details',
+        data: { title: 'Admission Details' },
+        loadComponent: async () =>
+          import('./modules/admission-application/admission-details/admission-details.component').then(
+            (c) => c.AdmissionDetailsComponent
+          ),
+      },
+      {
         path: 'user-student-admission',
-        data: { title: 'Certificate' },
+        data: { title: 'Student Admission' },
         loadComponent: async () =>
           import('./modules/Users/student-admission/student-admission.component').then(
             (c) => c.StudentAdmissionComponent
+          ),
+      },
+      {
+        path: 'user-manage-student',
+        data: { title: 'Manage Student' },
+        loadComponent: async () =>
+          import('./modules/Users/manage-student/manage-student.component').then(
+            (c) => c.ManageStudentComponent
+          ),
+      },
+      {
+        path: 'user-class',
+        data: { title: 'Create Class' },
+        loadComponent: async () =>
+          import('./modules/Users/class/class.component').then(
+            (c) => c.ClassComponent
+          ),
+      },
+      {
+        path: 'user-wallet-transaction',
+        data: { title: 'Wallet Transaction' },
+        loadComponent: async () =>
+          import('./modules/Users/wallet/wallet.component').then(
+            (c) => c.WalletComponent
           ),
       },
     ],

@@ -1,0 +1,72 @@
+<h3 class="text-xl font-bold text-gray-800 mb-4">Manage Student</h3>
+<div
+  class="bg-white shadow rounded-xl p-6 overflow-hidden overflow-y-auto mb-3"
+>
+  <h3 class="text-xl text-gray-800 mb-4">Select Criteria</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+    <div>
+      <!-- <label class="block text-gray-700 mb-1" for="dateFrom">Certificate</label> -->
+      <select
+        id="source"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+        <option value="">Admission Year</option>
+        <option value="year_one">2023</option>
+        <option value="year_two">2024</option>
+        <option value="year_three">2025</option>
+      </select>
+    </div>
+
+    <div>
+      <!-- <label class="block text-gray-700 mb-1" for="dateTo"
+        >Header Left Text</label
+      > -->
+      <select
+        id="source"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+        <option value="">Select By Session</option>
+      </select>
+    </div>
+
+    <div>
+      <!-- <label class="block text-gray-700 mb-1" for="dateTo"
+          >Header Left Text</label
+        > -->
+      <select
+        id="source"
+        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+        <option value="">Select By Class</option>
+      </select>
+    </div>
+    <div>
+        <!-- <label class="block text-gray-700 mb-1" for="dateTo"
+            >Header Left Text</label
+          > -->
+        <select
+          id="source"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <option value="">Select By Name</option>
+        </select>
+      </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+    <div class="flex items-end">
+      <button
+        class="w-24 bg-[#483078] text-white font-medium text-sm px-4 py-2 rounded hover:bg-[#331b64] transition"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+<div class="bg-white shadow rounded-xl p-6 overflow-hidden overflow-y-auto">
+  <app-shared-table
+    [tableData]="admission"
+    [columns]="tableColumns"
+    [showActionBtn]="showActionBtn"
+    [tableTitle]="'Students List'"
+  ></app-shared-table>
+</div>
